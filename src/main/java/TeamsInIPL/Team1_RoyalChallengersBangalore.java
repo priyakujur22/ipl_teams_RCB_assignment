@@ -21,4 +21,13 @@ public class Team1_RoyalChallengersBangalore extends Utility implements TeamFina
         return foreignPlayerCount;
 
     }
+    public int check_PresenceOfWicketKeeper(){
+        int wicketKeeperCount = 0;
+        for(Map.Entry<Integer,List> entry : teamMap.entrySet())
+            if(entry.getValue().get(2).toString().equalsIgnoreCase("Wicket-Keeper")){
+                wicketKeeperCount++;
+                break;
+            }
+        return wicketKeeperCount;
+    }
 }

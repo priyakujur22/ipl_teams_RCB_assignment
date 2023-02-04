@@ -30,4 +30,17 @@ public class TeamVerification extends Utility {
         }
     }
 
+    @Test
+    public void checkPresenceOfWicketKeeper(){
+        int count = team_RCB.check_PresenceOfWicketKeeper();
+        if(count>0){
+            Assert.assertTrue(count>0,"Team composition is correctly defined with minimum one wicket keeper. Count of wicket keeper in RCB team is : " + count);
+            System.out.println("Team composition is correctly defined with minimum one wicket keeper. Count of wicket keeper in RCB team is : " + count);
+        }else{
+            Assert.assertFalse(count==0,"Please add atleast one wicket keeper to the current team composition");
+            System.out.println("Please add atleast one wicket keeper to the current team composition");
+        }
+
+    }
+
 }
