@@ -10,6 +10,12 @@ The code validates the team structure according to defined protocols.
 - Java-Maven project
 - Related ependencies can be found in pom.xml
 - Testng Framework implemented
+- src/main/java contains business logic
+- src/test/java contains test class for execution
+
+##Repository information
+- master branch holds complete project code
+- develop branch is for test
 
 ##External files
 - JSON file is used to fetch team data
