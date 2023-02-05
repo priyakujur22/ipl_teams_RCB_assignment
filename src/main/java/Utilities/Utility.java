@@ -9,9 +9,17 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * Stores all common methods which can be used across all classes.
+ */
+
 public class Utility {
     public static Map<Integer, List> teamMap = new HashMap<Integer, List>();
 
+
+    /**
+     * Method to read JSON file contents.
+     */
     public void jsonFileReader() {
         String playerName;
         String country;
