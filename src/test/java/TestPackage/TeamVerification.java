@@ -30,11 +30,12 @@ public class TeamVerification extends Utility {
 
         if(count == 4 || count < 4 ){
 
-            Assert.assertTrue(count<=4,"Team composition is correctly defined with maximum foreign player count as : " + count);
-            System.out.println("Team composition is correctly defined with maximum foreign player count as : " + count);
+            Assert.assertTrue(count<=4,teamnName+ " Team composition is correctly defined with maximum foreign player count as : " + count);
+            System.out.println(teamnName + " Team composition is correctly defined with maximum foreign player count as : " + count);
+            System.out.println();
         }else{
-            Assert.assertFalse(count>4,"Please change the team composition. Maximum number of foreign players allowed is 4 or less than 4. " );
-            System.out.println("Please change the team composition. Maximum number of foreign players allowed is 4 or less than 4. " );
+            Assert.assertFalse(count>4,"Please change the " + teamnName + " team composition. Maximum number of foreign players allowed is 4 or less than 4. " );
+            System.out.println("Please change the " + teamnName + "  team composition. Maximum number of foreign players allowed is 4 or less than 4. " );
         }
     }
 
@@ -46,11 +47,11 @@ public class TeamVerification extends Utility {
     public void checkPresenceOfWicketKeeper(){
         int count = team_RCB.check_PresenceOfWicketKeeper();
         if(count>0){
-            Assert.assertTrue(count>0,"Team composition is correctly defined with minimum one wicket keeper. Count of wicket keeper in RCB team is : " + count);
-            System.out.println("Team composition is correctly defined with minimum one wicket keeper. Count of wicket keeper in RCB team is : " + count);
+            Assert.assertTrue(count>0,teamnName + " Team composition is correctly defined with minimum one wicket keeper. Count of wicket keeper in RCB team is : " + count);
+            System.out.println(teamnName + " Team composition is correctly defined with minimum one wicket keeper. Count of wicket keeper in RCB team is : " + count);
         }else{
-            Assert.assertFalse(count==0,"Please add atleast one wicket keeper to the current team composition");
-            System.out.println("Please add atleast one wicket keeper to the current team composition");
+            Assert.assertFalse(count==0,"Please add atleast one wicket keeper to the current  " + teamnName + " team composition");
+            System.out.println("Please add atleast one wicket keeper to the current  " + teamnName + " team composition");
         }
 
     }

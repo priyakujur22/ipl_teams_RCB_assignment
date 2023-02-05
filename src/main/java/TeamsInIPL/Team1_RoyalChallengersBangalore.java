@@ -15,23 +15,30 @@ public class Team1_RoyalChallengersBangalore extends Utility implements TeamFina
      * Method to check count of players in a team.
      */
     public void check_PlayersCount(){
-
-        System.out.println("RCB Team Strength : " + teamMap.size());
+     try {
+         System.out.println(super.teamnName +" Team Strength : " + teamMap.size());
+         System.out.println("-----------------------------------------------------------------");
+     }catch(Exception e){
+           System.out.println("Some exception occurred in fetching player count : "+ e);
+        }
     }
 
     /**
      * Method to check count of foreign players in a team , which should be either 4 or less.
      */
     public int check_CountOfForeignPlayers(){
-
         int foreignPlayerCount = 0;
 
+        try {
         for (Map.Entry<Integer, List> entry : teamMap.entrySet())
-            if(!entry.getValue().get(1).toString().equalsIgnoreCase("India")){
+            if (!entry.getValue().get(1).toString().equalsIgnoreCase("India")) {
                 foreignPlayerCount++;
             }
 
-        System.out.println("Count Of Foreign Players is : " + foreignPlayerCount);
+        System.out.println("Count Of Foreign Players in "+ teamnName+ " is : " + foreignPlayerCount);
+    }catch (Exception e){
+            System.out.println("Some exception occurred in fetching foreign player count : "+ e);
+        }
         return foreignPlayerCount;
 
     }
@@ -41,11 +48,16 @@ public class Team1_RoyalChallengersBangalore extends Utility implements TeamFina
      */
     public int check_PresenceOfWicketKeeper(){
         int wicketKeeperCount = 0;
-        for(Map.Entry<Integer,List> entry : teamMap.entrySet())
-            if(entry.getValue().get(2).toString().equalsIgnoreCase("Wicket-Keeper")){
-                wicketKeeperCount++;
-                break;
-            }
+        try {
+            for (Map.Entry<Integer, List> entry : teamMap.entrySet())
+                if (entry.getValue().get(2).toString().equalsIgnoreCase("Wicket-Keeper")) {
+                    wicketKeeperCount++;
+                    break;
+                }
+            System.out.println("Count Of wicket-keeper in "+ teamnName+ " is : " + wicketKeeperCount);
+        }catch(Exception e){
+            System.out.println("Some exception occurred in fetching wicket-keeper count : "+ e);
+        }
         return wicketKeeperCount;
     }
 }
