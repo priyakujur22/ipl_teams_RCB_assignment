@@ -14,6 +14,8 @@ import org.json.simple.parser.JSONParser;
  */
 
 public class Utility {
+    public static String teamnName;
+    public static String teamLocation;
     public static Map<Integer, List> teamMap = new HashMap<Integer, List>();
 
 
@@ -21,6 +23,7 @@ public class Utility {
      * Method to read JSON file contents.
      */
     public void jsonFileReader() {
+
         String playerName;
         String country;
         String role;
@@ -30,12 +33,12 @@ public class Utility {
         try {
             Object obj = parser.parse(new FileReader("src\\main\\resources\\RCB_Player_List.json"));
             JSONObject jsonObject = (JSONObject)obj;
-            String name = (String)jsonObject.get("name");
-            String location = (String)jsonObject.get("location");
+            teamnName = (String)jsonObject.get("name");
+            teamLocation = (String)jsonObject.get("location");
             JSONArray player = (JSONArray)jsonObject.get("player");
 
-            System.out.println("Team Name: " + name);
-            System.out.println("Location: " + location);
+            System.out.println("Team Name: " + teamnName);
+            System.out.println("Location: " + teamLocation);
 
 
 
@@ -57,7 +60,7 @@ public class Utility {
             }
 
         } catch(Exception e) {
-            e.printStackTrace();
+            System.out.println("Some issue in reading JSON file : " + e);
         }
     }
 }
