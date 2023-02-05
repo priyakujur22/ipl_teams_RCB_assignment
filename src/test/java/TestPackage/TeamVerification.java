@@ -6,6 +6,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+/**
+ * Test Class which executes major checks for team structure, as per protocols defined for any team to play in IPL.
+ */
+
 public class TeamVerification extends Utility {
     Team1_RoyalChallengersBangalore team_RCB = new Team1_RoyalChallengersBangalore();
 
@@ -15,6 +19,10 @@ public class TeamVerification extends Utility {
         jsonFileReader();
     }
 
+
+    /**
+     * Test method which executes check for count of foreign players in any IPL team.
+     */
     @Test
     public void checkCountOfForeignPlayers(){
         team_RCB.check_PlayersCount();
@@ -30,6 +38,10 @@ public class TeamVerification extends Utility {
         }
     }
 
+
+    /**
+     * Test method which executes check for count of wicket keeper in any IPL team.
+     */
     @Test
     public void checkPresenceOfWicketKeeper(){
         int count = team_RCB.check_PresenceOfWicketKeeper();
